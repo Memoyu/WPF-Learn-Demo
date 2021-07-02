@@ -4,6 +4,16 @@
              xmlns:local="clr-namespace:WPF._1.Layout"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+         <ResourceDictionary>
+            <Style x:Key="Icon" TargetType="{x:Type TextBlock}">
+                <!--<Setter Property="FontFamily" Value="/UIDemo;component/Resources/#iconfont" />-->
+                <Setter Property="FontFamily" Value="pack://application:,,,/WPF.1.Layout;component/Resources/#IconFont"/>
+                <Setter Property="TextAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="17"/>
+                <Setter Property="Foreground" Value="#C5C5C5"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

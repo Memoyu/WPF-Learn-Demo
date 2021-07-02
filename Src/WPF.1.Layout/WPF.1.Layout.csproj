@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\iconfont.ttf" />
     <None Remove="Resources\logo.png" />
   </ItemGroup>
 
@@ -15,6 +16,10 @@
     <Content Include="Resources\logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\iconfont.ttf" />
   </ItemGroup>
 
 </Project>

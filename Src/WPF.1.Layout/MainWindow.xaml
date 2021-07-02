@@ -7,9 +7,25 @@
         mc:Ignorable="d"
         Title="LayoutDemo" Height="800" Width="1200">
     <Window.Resources>
-        <Style x:Key="NavBorderStyle" TargetType="Border">
+        <Style x:Key="NavStackPanelStyle" TargetType="StackPanel">
             <Setter Property="Margin" Value="20,0"/>
+            <Setter Property="Orientation" Value="Horizontal"/>
         </Style>
+
+        <Style x:Key="NavTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="5,0"/>
+            <Setter Property="Foreground" Value="#C5C5C5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <Style x:Key="Style" TargetType="TextBlock">
+            <Setter Property="Margin" Value="5,0"/>
+            <Setter Property="Foreground" Value="#C5C5C5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -18,12 +34,12 @@
         </Grid.RowDefinitions>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="110"/>
+                <ColumnDefinition Width="130"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock VerticalAlignment="Center" Margin="20, 0">实战训练营</TextBlock>
+            <TextBlock VerticalAlignment="Center" Margin="20, 0" Foreground="#FC7894" FontSize="17">实战训练营</TextBlock>
             <StackPanel Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft">
-                <TextBlock VerticalAlignment="Center">退 出</TextBlock>
+                <TextBlock VerticalAlignment="Center" Margin="30,0,0,0" Style="{StaticResource NavTextBlockStyle}">退 出</TextBlock>
                 <Grid Margin="20,0,30,0">
                     <Ellipse Width="50" Height="50">
                         <Ellipse.Fill>
@@ -31,21 +47,26 @@
                         </Ellipse.Fill>
                     </Ellipse>
                 </Grid>
-                <Border Style="{StaticResource NavBorderStyle}">
-                    <TextBlock VerticalAlignment="Center">客服</TextBlock>
-                </Border>
-                <Border Style="{StaticResource NavBorderStyle}">
-                    <TextBlock VerticalAlignment="Center">市场</TextBlock>
-                </Border>
-                <Border Style="{StaticResource NavBorderStyle}">
-                    <TextBlock VerticalAlignment="Center">积分</TextBlock>
-                </Border>
-                <Border Style="{StaticResource NavBorderStyle}">
-                    <TextBlock VerticalAlignment="Center">财务</TextBlock>
-                </Border>
-                <Border Style="{StaticResource NavBorderStyle}">
-                    <TextBlock VerticalAlignment="Center">用户</TextBlock>
-                </Border>
+                <StackPanel Style="{StaticResource NavStackPanelStyle}">
+                    <TextBlock Style="{StaticResource NavTextBlockStyle}">客服</TextBlock>
+                    <TextBlock Style="{StaticResource Icon}" Text="&#xe69a;" />
+                </StackPanel>
+                <StackPanel Style="{StaticResource NavStackPanelStyle}">
+                    <TextBlock  Style="{StaticResource NavTextBlockStyle}">市场</TextBlock>
+                    <TextBlock Style="{StaticResource Icon}" Text="&#xe636;" />
+                </StackPanel>
+                <StackPanel Style="{StaticResource NavStackPanelStyle}">
+                    <TextBlock Style="{StaticResource NavTextBlockStyle}">积分</TextBlock>
+                    <TextBlock Style="{StaticResource Icon}" Text="&#xe62b;" />
+                </StackPanel>
+                <StackPanel Style="{StaticResource NavStackPanelStyle}">
+                    <TextBlock Style="{StaticResource NavTextBlockStyle}">财务</TextBlock>
+                    <TextBlock Style="{StaticResource Icon}" Text="&#xe613;" />
+                </StackPanel>
+                <StackPanel Style="{StaticResource NavStackPanelStyle}">
+                    <TextBlock Style="{StaticResource NavTextBlockStyle}">用户</TextBlock>
+                    <TextBlock Style="{StaticResource Icon}" Text="&#xe720;" />
+                </StackPanel>
             </StackPanel>
         </Grid>
 
@@ -64,11 +85,13 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Border Background="Aqua" Margin="10"></Border>
-            <Border Grid.Column="1" Background="Aqua" Margin="10"></Border>
-            <Border Grid.Column="2" Background="Aqua" Margin="10"></Border>
-            <Border Grid.Column="3" Background="Aqua" Margin="10"></Border>
-            <Border Grid.Column="4" Background="Aqua" Margin="10"></Border>
+                <Border Background="#2DA0F9" Margin="10">
+
+                </Border>
+                <Border Grid.Column="1" Background="#68CA29" Margin="10"></Border>
+                <Border Grid.Column="2" Background="#FDA005" Margin="10"></Border>
+                <Border Grid.Column="3" Background="#3EC6C4" Margin="10"></Border>
+                <Border Grid.Column="4" Background="#E0706F" Margin="10"></Border>
 
             <Border Grid.Row="1" Grid.ColumnSpan="2" Background="Green" Margin="10"></Border>
             <Border Grid.Row="2" Background="Aqua" Margin="10"></Border>
