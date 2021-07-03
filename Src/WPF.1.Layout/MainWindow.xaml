@@ -119,7 +119,7 @@
                                 <TextBlock Style="{StaticResource WhiteFont_11_Style}">+0.8%</TextBlock>
                             </StackPanel>
                         </DockPanel>
-                        <TextBlock Grid.Row="2" Style="{StaticResource WhiteFont_11_Style}">体现  充值</TextBlock>
+                        <TextBlock Grid.Row="2" Style="{StaticResource WhiteFont_11_Style}">提现  充值</TextBlock>
                     </Grid>
                 </Border>
                 <Border Grid.Column="1" Background="#68CA29" Margin="10">
@@ -137,7 +137,7 @@
                                 <TextBlock Style="{StaticResource WhiteFont_11_Style}">+0.8%</TextBlock>
                             </StackPanel>
                         </DockPanel>
-                        <TextBlock Grid.Row="2" Style="{StaticResource WhiteFont_11_Style}">体现  充值</TextBlock>
+                        <TextBlock Grid.Row="2" Style="{StaticResource WhiteFont_11_Style}">提现  充值</TextBlock>
                     </Grid>
                 </Border>
                 <Border Grid.Column="2" Background="#FDA005" Margin="10">
@@ -155,7 +155,7 @@
                                 <TextBlock Style="{StaticResource WhiteFont_11_Style}">+0.8%</TextBlock>
                             </StackPanel>
                         </DockPanel>
-                        <TextBlock Grid.Row="2" Style="{StaticResource WhiteFont_11_Style}">体现  充值</TextBlock>
+                        <TextBlock Grid.Row="2" Style="{StaticResource WhiteFont_11_Style}">提现  充值</TextBlock>
                     </Grid>
                 </Border>
                 <Border Grid.Column="3" Background="#3EC6C4" Margin="10">
@@ -173,7 +173,7 @@
                                 <TextBlock Style="{StaticResource WhiteFont_11_Style}">+0.8%</TextBlock>
                             </StackPanel>
                         </DockPanel>
-                        <TextBlock Grid.Row="2" Style="{StaticResource WhiteFont_11_Style}">体现  充值</TextBlock>
+                        <TextBlock Grid.Row="2" Style="{StaticResource WhiteFont_11_Style}">提现  充值</TextBlock>
                     </Grid>
                 </Border>
                 <Border Grid.Column="4" Background="#E0706F" Margin="10">
@@ -191,7 +191,7 @@
                                 <TextBlock Style="{StaticResource WhiteFont_11_Style}">+0.8%</TextBlock>
                             </StackPanel>
                         </DockPanel>
-                        <TextBlock Grid.Row="2" Style="{StaticResource WhiteFont_11_Style}">体现  充值</TextBlock>
+                        <TextBlock Grid.Row="2" Style="{StaticResource WhiteFont_11_Style}">提现  充值</TextBlock>
                     </Grid>
                 </Border>
 
@@ -232,7 +232,6 @@
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
-                            <ColumnDefinition Width="0.1"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Grid Margin="20,30">
@@ -260,20 +259,20 @@
                                     </Ellipse>
                                     <TextBlock Margin="10,0" VerticalAlignment="Center" Foreground="#7F838C" FontWeight="Bold">包图小王子</TextBlock>
                                 </DockPanel>
-                                <Button Grid.Column="1" BorderBrush="Transparent" Foreground="White" VerticalAlignment="Center" Padding="6" HorizontalAlignment="Right" Background="#39A2F7">修改资料</Button>
+                                <Button Grid.Column="1" BorderBrush="Transparent" Foreground="White" VerticalAlignment="Center" Padding="6" Background="#39A2F7">修改资料</Button>
                                 <StackPanel Grid.Row="1">
                                     <DockPanel>
                                         <TextBlock Style="{StaticResource GrayFont_11_Style}">手机号：12345678909</TextBlock>
-                                        <TextBlock Margin="20,0" Style="{StaticResource GrayFont_11_Style}">开户姓名：叶良辰</TextBlock>
+                                        <TextBlock Margin="10,0" Style="{StaticResource GrayFont_11_Style}">开户姓名：叶良辰</TextBlock>
                                     </DockPanel>
                                     <TextBlock Margin="0,10,0,0" Style="{StaticResource GrayFont_11_Style}">用户名：James2021</TextBlock>
                                 </StackPanel>
                                 <TextBox Grid.Row="99" VerticalAlignment="Center" Padding="7" BorderBrush="Transparent" Background="#F4F4F4" >https://github.com/Memoyu</TextBox>
-                                <Button Grid.Row="99" Grid.Column="1" DockPanel.Dock="Right" BorderBrush="Transparent" Foreground="White" VerticalAlignment="Center" Padding="6"  Background="#74CB3B">修改资料</Button>
+                                <Button Grid.Row="99" Grid.Column="1" BorderBrush="Transparent" Foreground="White" VerticalAlignment="Center" Padding="6"  Background="#74CB3B">修改资料</Button>
                             </Grid>
                         </Grid>
-                        <Border Grid.Column="1" Background="#7F838C" Margin="0,20"></Border>
-                        <Grid Margin="20,30" Grid.Column="2">
+                        <Border Background="#7F838C" HorizontalAlignment="Right" Width="0.1" Margin="0,20"></Border>
+                        <Grid Margin="20,30" Grid.Column="1">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="10*"/>
@@ -293,7 +292,7 @@
                                             </Ellipse>
                                             <TextBlock Margin="20,0" VerticalAlignment="Center" Text="{Binding Name}"></TextBlock>
                                             <TextBlock VerticalAlignment="Center" Text="{Binding Date}"></TextBlock>
-                                            <TextBlock Margin="20,0,0,0" VerticalAlignment="Center" Text="->"></TextBlock>
+                                            <TextBlock Margin="20,0" VerticalAlignment="Center" Text="->"></TextBlock>
                                         </DockPanel>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
