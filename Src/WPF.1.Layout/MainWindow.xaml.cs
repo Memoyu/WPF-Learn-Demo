@@ -20,9 +20,45 @@ namespace WPF._1.Layout
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<User> users;
         public MainWindow()
         {
             InitializeComponent();
+            users = new List<User>
+            {
+                new User
+                {
+                    Avatar = "/Resources/logo.png",
+                    Name = "飞翔的蜗牛",
+                    Date = "07-03"
+                },new User
+                {
+                    Avatar = "/Resources/logo.png",
+                    Name = "飞翔的蜗牛",
+                    Date = "07-03"
+                },new User
+                {
+                    Avatar = "/Resources/logo.png",
+                    Name = "飞翔的蜗牛",
+                    Date = "07-03"
+                },new User
+                {
+                    Avatar = "/Resources/logo.png",
+                    Name = "飞翔的蜗牛",
+                    Date = "07-03"
+                }
+            };
+
+            UserList.ItemsSource = users;
         }
+    }
+
+    internal class User
+    {
+        public string Name { get; set; }
+
+        public string Avatar { get; set; }
+
+        public string Date { get; set; }
     }
 }

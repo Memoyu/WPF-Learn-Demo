@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF._1.Layout"
         mc:Ignorable="d"
-        Title="LayoutDemo" Height="800" Width="1200">
+        Title="LayoutDemo" Height="800" Width="1200" FontFamily="Cascadia Code">
     <Window.Resources>
         <Style x:Key="NavStackPanelStyle" TargetType="StackPanel">
             <Setter Property="Margin" Value="20,0"/>
@@ -19,11 +19,27 @@
             <Setter Property="FontSize" Value="16"/>
         </Style>
 
-        <Style x:Key="Style" TargetType="TextBlock">
-            <Setter Property="Margin" Value="5,0"/>
+        <Style x:Key="GrayFont_11_Style" TargetType="TextBlock">
             <Setter Property="Foreground" Value="#C5C5C5"/>
+            <Setter Property="FontSize" Value="11"/>
+        </Style>
+
+        <Style x:Key="WhiteFont_11_Style" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="11"/>
+        </Style>
+
+        <Style x:Key="WhiteFont_20_Bold_Style" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+
+        <Style x:Key="BlackFont_18_Bold_Style" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="18"/>
         </Style>
 
     </Window.Resources>
@@ -32,12 +48,14 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
+        <!--导航栏-->
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="130"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock VerticalAlignment="Center" Margin="20, 0" Foreground="#FC7894" FontSize="17">实战训练营</TextBlock>
+            <TextBlock VerticalAlignment="Center" Margin="20, 0" Foreground="#FC7894" FontSize="17">Memoyu</TextBlock>
             <StackPanel Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft">
                 <TextBlock VerticalAlignment="Center" Margin="30,0,0,0" Style="{StaticResource NavTextBlockStyle}">退 出</TextBlock>
                 <Grid Margin="20,0,30,0">
@@ -70,40 +88,291 @@
             </StackPanel>
         </Grid>
 
+        <!--内容-->
         <Border Grid.Row="1" Background="#F4F4F4">
-        <Grid Margin="15">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+            <Grid Margin="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
                 <Border Background="#2DA0F9" Margin="10">
-
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBlock Style="{StaticResource WhiteFont_11_Style}">现金积分</TextBlock>
+                        <DockPanel Grid.Row="1" >
+                            <TextBlock Style="{StaticResource WhiteFont_20_Bold_Style}">255,539</TextBlock>
+                            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource WhiteFont_11_Style}" HorizontalAlignment="Right">收益</TextBlock>
+                                <TextBlock Style="{StaticResource WhiteFont_11_Style}">+0.8%</TextBlock>
+                            </StackPanel>
+                        </DockPanel>
+                        <TextBlock Grid.Row="2" Style="{StaticResource WhiteFont_11_Style}">体现  充值</TextBlock>
+                    </Grid>
                 </Border>
-                <Border Grid.Column="1" Background="#68CA29" Margin="10"></Border>
-                <Border Grid.Column="2" Background="#FDA005" Margin="10"></Border>
-                <Border Grid.Column="3" Background="#3EC6C4" Margin="10"></Border>
-                <Border Grid.Column="4" Background="#E0706F" Margin="10"></Border>
+                <Border Grid.Column="1" Background="#68CA29" Margin="10">
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBlock Style="{StaticResource WhiteFont_11_Style}">商城积分</TextBlock>
+                        <DockPanel Grid.Row="1" >
+                            <TextBlock Style="{StaticResource WhiteFont_20_Bold_Style}">656,683</TextBlock>
+                            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource WhiteFont_11_Style}" HorizontalAlignment="Right">收益</TextBlock>
+                                <TextBlock Style="{StaticResource WhiteFont_11_Style}">+0.8%</TextBlock>
+                            </StackPanel>
+                        </DockPanel>
+                        <TextBlock Grid.Row="2" Style="{StaticResource WhiteFont_11_Style}">体现  充值</TextBlock>
+                    </Grid>
+                </Border>
+                <Border Grid.Column="2" Background="#FDA005" Margin="10">
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBlock Style="{StaticResource WhiteFont_11_Style}">理财积分</TextBlock>
+                        <DockPanel Grid.Row="1" >
+                            <TextBlock Style="{StaticResource WhiteFont_20_Bold_Style}">37,215</TextBlock>
+                            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource WhiteFont_11_Style}" HorizontalAlignment="Right">收益</TextBlock>
+                                <TextBlock Style="{StaticResource WhiteFont_11_Style}">+0.8%</TextBlock>
+                            </StackPanel>
+                        </DockPanel>
+                        <TextBlock Grid.Row="2" Style="{StaticResource WhiteFont_11_Style}">体现  充值</TextBlock>
+                    </Grid>
+                </Border>
+                <Border Grid.Column="3" Background="#3EC6C4" Margin="10">
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBlock Style="{StaticResource WhiteFont_11_Style}">激活码</TextBlock>
+                        <DockPanel Grid.Row="1" >
+                            <TextBlock Style="{StaticResource WhiteFont_20_Bold_Style}">49,201</TextBlock>
+                            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource WhiteFont_11_Style}" HorizontalAlignment="Right">收益</TextBlock>
+                                <TextBlock Style="{StaticResource WhiteFont_11_Style}">+0.8%</TextBlock>
+                            </StackPanel>
+                        </DockPanel>
+                        <TextBlock Grid.Row="2" Style="{StaticResource WhiteFont_11_Style}">体现  充值</TextBlock>
+                    </Grid>
+                </Border>
+                <Border Grid.Column="4" Background="#E0706F" Margin="10">
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBlock Style="{StaticResource WhiteFont_11_Style}">活跃用户</TextBlock>
+                        <DockPanel Grid.Row="1" >
+                            <TextBlock Style="{StaticResource WhiteFont_20_Bold_Style}">458,319</TextBlock>
+                            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource WhiteFont_11_Style}" HorizontalAlignment="Right">收益</TextBlock>
+                                <TextBlock Style="{StaticResource WhiteFont_11_Style}">+0.8%</TextBlock>
+                            </StackPanel>
+                        </DockPanel>
+                        <TextBlock Grid.Row="2" Style="{StaticResource WhiteFont_11_Style}">体现  充值</TextBlock>
+                    </Grid>
+                </Border>
 
-            <Border Grid.Row="1" Grid.ColumnSpan="2" Background="Green" Margin="10"></Border>
-            <Border Grid.Row="2" Background="Aqua" Margin="10"></Border>
-            <Border Grid.Row="2" Grid.Column="1" Background="Aqua" Margin="10"></Border>
-            <Border Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="3" Background="Purple" Margin="10"></Border>
+                <Border Grid.Row="1" Grid.ColumnSpan="2" Background="White" Margin="10">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <DockPanel>
+                            <TextBlock Margin="0,0,5,0" Style="{StaticResource Icon}" Foreground="#FAB249" FontSize="50" Text="&#xe61e;" />
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource BlackFont_18_Bold_Style}" Foreground="Black">成为会员,加入我们</TextBlock>
+                                <TextBlock Style="{StaticResource GrayFont_11_Style}">立即前往</TextBlock>
+                            </StackPanel>
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2" Background="White" Margin="10">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <DockPanel>
+                            <TextBlock Margin="0,0,5,0" Style="{StaticResource Icon}" Foreground="#39A2F7" FontSize="50" Text="&#xe636;" />
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource BlackFont_18_Bold_Style}" Foreground="Black">我要投资</TextBlock>
+                                <TextBlock Style="{StaticResource GrayFont_11_Style}">立即前往</TextBlock>
+                            </StackPanel>
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="1" Background="White" Margin="10">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <DockPanel>
+                            <TextBlock Margin="0,0,5,0" Style="{StaticResource Icon}" Foreground="#FAB249" FontSize="50" Text="&#xe62b;" />
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource BlackFont_18_Bold_Style}" Foreground="Black">积分商城</TextBlock>
+                                <TextBlock Style="{StaticResource GrayFont_11_Style}">立即前往</TextBlock>
+                            </StackPanel>
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="3" Background="White" Margin="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="0.1"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Margin="20,30">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="10*"/>
+                            </Grid.RowDefinitions>
 
-            <Border Grid.Row="3" Background="Aqua" Margin="10"></Border>
-            <Border Grid.Row="3" Grid.Column="1" Background="Aqua" Margin="10"></Border>
-            <Border Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="3" Background="Blue" Margin="10"></Border>
-
-        </Grid>
-
+                            <TextBlock Foreground="#7F838C" FontWeight="Bold">个人资料</TextBlock>
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <DockPanel>
+                                    <Ellipse Width="70" Height="70">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="/Resources/logo.png"></ImageBrush>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                    <TextBlock Margin="10,0" VerticalAlignment="Center" Foreground="#7F838C" FontWeight="Bold">包图小王子</TextBlock>
+                                </DockPanel>
+                                <Button Grid.Column="1" BorderBrush="Transparent" Foreground="White" VerticalAlignment="Center" Padding="6" HorizontalAlignment="Right" Background="#39A2F7">修改资料</Button>
+                                <StackPanel Grid.Row="1">
+                                    <DockPanel>
+                                        <TextBlock Style="{StaticResource GrayFont_11_Style}">手机号：12345678909</TextBlock>
+                                        <TextBlock Margin="20,0" Style="{StaticResource GrayFont_11_Style}">开户姓名：叶良辰</TextBlock>
+                                    </DockPanel>
+                                    <TextBlock Margin="0,10,0,0" Style="{StaticResource GrayFont_11_Style}">用户名：James2021</TextBlock>
+                                </StackPanel>
+                                <TextBox Grid.Row="99" VerticalAlignment="Center" Padding="7" BorderBrush="Transparent" Background="#F4F4F4" >https://github.com/Memoyu</TextBox>
+                                <Button Grid.Row="99" Grid.Column="1" DockPanel.Dock="Right" BorderBrush="Transparent" Foreground="White" VerticalAlignment="Center" Padding="6"  Background="#74CB3B">修改资料</Button>
+                            </Grid>
+                        </Grid>
+                        <Border Grid.Column="1" Background="#7F838C" Margin="0,20"></Border>
+                        <Grid Margin="20,30" Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="10*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Foreground="#7F838C" FontWeight="Bold">推荐用户</TextBlock>
+                            <ListView Grid.Row="1" 
+                                      ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                                      BorderBrush="Transparent" 
+                                      Name="UserList">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <DockPanel Margin="10">
+                                            <Ellipse Width="35" Height="35">
+                                                <Ellipse.Fill>
+                                                    <ImageBrush ImageSource="{Binding Avatar}"></ImageBrush>
+                                                </Ellipse.Fill>
+                                            </Ellipse>
+                                            <TextBlock Margin="20,0" VerticalAlignment="Center" Text="{Binding Name}"></TextBlock>
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding Date}"></TextBlock>
+                                            <TextBlock Margin="20,0,0,0" VerticalAlignment="Center" Text="->"></TextBlock>
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </Grid>
+                </Border>
+                <Border Grid.Row="3" Background="White" Margin="10">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <DockPanel>
+                            <TextBlock Margin="0,0,5,0" Style="{StaticResource Icon}" Foreground="#62CECF" FontSize="50" Text="&#xe61d;" />
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource BlackFont_18_Bold_Style}" Foreground="Black">兑换任务</TextBlock>
+                                <TextBlock Style="{StaticResource GrayFont_11_Style}">立即前往</TextBlock>
+                            </StackPanel>
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="3" Grid.Column="1" Background="White" Margin="10">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <DockPanel>
+                            <TextBlock Margin="0,0,5,0" Style="{StaticResource Icon}" Foreground="#A5DC82" FontSize="50" Text="&#xe6a8;" />
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource BlackFont_18_Bold_Style}" Foreground="Black">线下充值</TextBlock>
+                                <TextBlock Style="{StaticResource GrayFont_11_Style}">立即前往</TextBlock>
+                            </StackPanel>
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="3" Background="White" Margin="10">
+                    <Grid Margin="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="6*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Foreground="#7F838C" FontWeight="Bold">推荐用户</TextBlock>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <DockPanel>
+                                    <TextBlock Style="{StaticResource WhiteFont_20_Bold_Style}" Foreground="#389EF1">-168</TextBlock>
+                                    <TextBlock FontSize="11" Padding="0,0,0,3" VerticalAlignment="Bottom">点商城积分</TextBlock>
+                                </DockPanel>
+                                <TextBlock Margin="10,5">07-10</TextBlock>
+                                <TextBlock Margin="10,0" Foreground="#7F838C" FontWeight="Bold">查看明细</TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <DockPanel>
+                                    <TextBlock Style="{StaticResource WhiteFont_20_Bold_Style}" Foreground="#389EF1">-168</TextBlock>
+                                    <TextBlock FontSize="11" Padding="0,0,0,3" VerticalAlignment="Bottom">点商城积分</TextBlock>
+                                </DockPanel>
+                                <TextBlock Margin="10,5">07-10</TextBlock>
+                                <TextBlock Margin="10,0" Foreground="#7F838C" FontWeight="Bold">查看明细</TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <DockPanel>
+                                    <TextBlock Style="{StaticResource WhiteFont_20_Bold_Style}" Foreground="#389EF1">-168</TextBlock>
+                                    <TextBlock FontSize="11" Padding="0,0,0,3" VerticalAlignment="Bottom">点商城积分</TextBlock>
+                                </DockPanel>
+                                <TextBlock Margin="10,5">07-10</TextBlock>
+                                <TextBlock Margin="10,0" Foreground="#7F838C" FontWeight="Bold">查看明细</TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <DockPanel>
+                                    <TextBlock Style="{StaticResource WhiteFont_20_Bold_Style}" Foreground="#389EF1">-168</TextBlock>
+                                    <TextBlock FontSize="11" Padding="0,0,0,3" VerticalAlignment="Bottom">点商城积分</TextBlock>
+                                </DockPanel>
+                                <TextBlock Margin="10,5">07-10</TextBlock>
+                                <TextBlock Margin="10,0" Foreground="#7F838C" FontWeight="Bold">查看明细</TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
         </Border>
 
     </Grid>
