@@ -1,5 +1,7 @@
 ﻿using Prism.Commands;
+using Prism.Ioc;
 using Prism.Mvvm;
+using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,10 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ToDo.Shared.Dtos;
+using ToDoClient.ViewModels.Base;
 
 namespace ToDoClient.ViewModels
 {
-    public class ToDoViewModel : BindableBase
+    public class ToDoViewModel : BaseNavigationViewModel
     {
         private ObservableCollection<ToDoDto> toDos;
         public ObservableCollection<ToDoDto> ToDos
@@ -27,22 +30,41 @@ namespace ToDoClient.ViewModels
         }
         public DelegateCommand AddCommand { get; private set; }
 
-        public ToDoViewModel()
+        public ToDoViewModel(IContainerProvider containerProvider)
+            : base(containerProvider)
         {
-            CreateTestData();
             AddCommand = new DelegateCommand(AddToDo);
         }
 
-        private void CreateTestData()
+        public override void OnNavigatedTo(NavigationContext navigationContext)
         {
-            ToDos = new ObservableCollection<ToDoDto>();
-            for (int i = 0; i < 50; i++)
+          //GetData();
+        }
+
+        private async void GetData()
+        {
+            Loading(true);
+            try
             {
-                ToDos.Add(new ToDoDto
+
+                ToDos = new ObservableCollection<ToDoDto>();
+                for (int i = 0; i < 50; i++)
                 {
-                    Title = $"待办-{i}",
-                    Content = $"正在处理，还需要{i}分钟",
-                });
+                    ToDos.Add(new ToDoDto
+                    {
+                        Title = $"待办-{i}",
+                        Content = $"正在处理，还需要{i}分钟",
+                    });
+                }
+
+               // await Task.Delay(5000);
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                Loading(false);
             }
         }
 

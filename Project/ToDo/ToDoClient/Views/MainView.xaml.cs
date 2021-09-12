@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using Prism.Events;
+using System.Windows;
 using System.Windows.Input;
+using ToDoClient.Common.Extensions;
+using ToDoClient.Views.Base;
 
 namespace ToDoClient.Views
 {
@@ -8,9 +11,16 @@ namespace ToDoClient.Views
     /// </summary>
     public partial class MainView : Window
     {
-        public MainView()
+        public MainView(IEventAggregator eventAggregator )
         {
             InitializeComponent();
+
+            eventAggregator.Subscribe(arg =>
+            {
+                DialogHost.IsOpen = arg.IsOpen;
+                if (DialogHost.IsOpen)
+                    DialogHost.DialogContent = new LoadingView(arg.Hint);
+            });
 
             btnMin.Click += (s, e) =>
             {

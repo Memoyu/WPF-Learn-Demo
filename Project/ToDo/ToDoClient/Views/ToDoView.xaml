@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:ToDoClient.Views"
+             xmlns:com="clr-namespace:ToDoClient.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <materialDesign:DialogHost>
@@ -41,6 +42,7 @@
                     </ComboBox>
                 </StackPanel>
                 <Button Content="+ 添加待办" Margin="10, 5" HorizontalAlignment="Right" Command="{Binding AddCommand}"/>
+                <com:EmptyControl Grid.Row="1" Title="还没有待办或已完成事项哟！" ItemsCount="{Binding ToDos.Count}"/>
                 <ScrollViewer Grid.Row="1" >
                     <ItemsControl Grid.Row="1" ItemsSource="{Binding ToDos}" HorizontalAlignment="Center">
                         <ItemsControl.ItemsPanel>
